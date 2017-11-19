@@ -4,7 +4,8 @@
 <head>
    <meta charset="UTF-8">
    <meta name="color:background" content="#fff" />
-   <meta name="color:title" content="#1C1C1C" />
+   <meta name="color:main color" content="#1C1C1C" />
+   <meta name="color:shadow color" content="#1C1C1C" />
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
    <style type="text/css">
       @charset "UTF-8";
@@ -33,14 +34,15 @@
          padding: 10px;
          box-sizing: border-box;
          color: {
-            color: title
+            color: main color
          }
          ;
       }
 
       .header .title a {
+         font-weight: 800;
          color: {
-            color: title
+            color: main color
          }
          ;
          text-decoration: none;
@@ -63,7 +65,10 @@
          background-position: center center;
          margin-top: 32px;
          margin-left: 32px;
-         box-shadow: 0 5px 5px #393939;
+         box-shadow: 0 5px 5px {
+            color: shadow color
+         }
+         ;
          cursor: pointer;
       }
 
@@ -98,7 +103,7 @@
       }
 
       .click-box {
-         background-color: rgba(0, 0, 0, 0.8);
+         background-color: rgba(0, 0, 0, 0.9);
          display: flex;
          flex-direction: column;
          align-items: center;
@@ -123,6 +128,7 @@
       }
 
       .click-box .click-data .click-img img {
+         opacity: 1;
          width: auto;
          height: auto;
          max-width: 100%;
@@ -173,8 +179,11 @@
 
       .navi .fa {
          font-size: 80px;
-         color: #1C1C1C;
-         opacity: 0.3;
+         color: {
+            color: main color
+         }
+         ;
+         opacity: 0.4;
          position: fixed;
          bottom: 5%;
          cursor: pointer;
@@ -182,7 +191,7 @@
       }
 
       .navi .fa:hover {
-         opacity: 0.9;
+         opacity: 0.95;
       }
 
       .navi .fa-chevron-circle-left {
