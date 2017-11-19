@@ -1,277 +1,219 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-<head>
-   <meta charset="UTF-8">
-   <meta name="color:background" content="#fff" />
-   <meta name="color:main color" content="#1C1C1C" />
-   <meta name="color:shadow color" content="#1C1C1C" />
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-   <style type="text/css">
-      @charset "UTF-8";
-      * {
-         margin: 0;
-         padding: 0;
-      }
+   <head>
+      <meta charset="UTF-8">
+      <meta name="color:background" content="#fff"/>
+      <meta name="color:main color" content="#1C1C1C"/>
+      <meta name="color:shadow color" content="#1C1C1C"/>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <style type="text/css">
+         @charset "UTF-8";
+         * {
+            margin: 0;
+            padding: 0; }
 
-      body {
-         font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
-         background-color: {
-            color: background
+         body {
+            font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+            background-color:{color:background};
          }
-         ;
-      }
 
-      .container {
-         width: 960px;
-         margin: 0 auto;
-      }
+         .container {
+            width: 960px;
+            margin: 0 auto; }
 
-      .header {
-         display: flex;
-         justify-content: space-between;
-         font-size: 28px;
-         padding: 10px;
-         box-sizing: border-box;
-         color: {
-            color: main color
+         .header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 28px;
+            padding: 10px;
+            box-sizing: border-box;
+            color:{color:main color};}
+         .header .title a {
+            font-weight:800;
+            color: {color:main color};
+            text-decoration: none;
+            transition: 0.5s; }
+         .header .title a:hover {
+            opacity: 0.5; }
+
+         .main {
+            display: flex;
+            flex-wrap: wrap; }
+         .main .main-box {
+            width: 200px;
+            height: 200px;
+            background-size: cover;
+            background-position: center center;
+            margin-top: 32px;
+            margin-left: 32px;
+            box-shadow: 0 5px 5px {color:shadow color};
+            cursor: pointer; }
+         .main .main-box .box-dark {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-weight: bold; }
+         .main .main-box .box-dark .fa {
+            padding-right: 5px; }
+         .main .main-box .box-dark .fa:nth-child(2) {
+            padding-left: 15px; }
+         .main .main-box:nth-child(4n) {
+            margin-right: 32px; }
+         .main .main-box:hover {
+            position: relative;
+            top: 5px;
+            box-shadow: 0 0 0 0; }
+
+         .click-box {
+            background-color: rgba(0,0,0,0.9);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%; }
+         .click-box .click-data {
+            width: 80%;
+            height: 80%; }
+         .click-box .click-data .click-img {
+            width: 100%;
+            height: 90%;
+            text-align: center; }
+         .click-box .click-data .click-img img {
+            opacity:1;
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%; }
+         .click-box .click-data .click-text {
+            margin-top:10px;
+            color: #fff;
+            display: flex; }
+         .click-box .click-data .click-text .caption {
+            text-align: left;
+            flex: 4}
+         .click-box .click-data .click-text .date {
+            text-align: right;
+            flex: 1
          }
-         ;
-      }
+         .click-box .click-data .click-text .click-text-box {
+            ; }
+         .click-box .click-data .click-text .click-text-box .fa {
+            padding-right: 5px; }
+         .click-box .click-data .click-text .click-text-box .fa:nth-child(2) {
+            padding-left: 15px; }
+         .click-box .click-data .click-text .click-text-box .subtitle {
 
-      .header .title a {
-         font-weight: 800;
-         color: {
-            color: main color
-         }
-         ;
-         text-decoration: none;
-         transition: 0.5s;
-      }
+            font-size: 16px;
+            font-weight: 800; }
+         .click-box .click-data .click-text .click-text-box .day {
+            font-size: 14px; }
 
-      .header .title a:hover {
-         opacity: 0.5;
-      }
+         .hide {
+            display: none; }
+         .navi .fa {
+            font-size: 80px;
+            color: {color:main color};
+            opacity: 0.4;
+            position: fixed;
+            bottom: 5%;
+            cursor: pointer;
+            transition: 0.5s; }
+         .navi .fa:hover {
+            opacity: 0.95; }
 
-      .main {
-         display: flex;
-         flex-wrap: wrap;
-      }
+         .navi .fa-chevron-circle-left {
+            left: 10%; }
 
-      .main .main-box {
-         width: 200px;
-         height: 200px;
-         background-size: cover;
-         background-position: center center;
-         margin-top: 32px;
-         margin-left: 32px;
-         box-shadow: 0 5px 5px {
-            color: shadow color
-         }
-         ;
-         cursor: pointer;
-      }
-
-      .main .main-box .box-dark {
-         width: 100%;
-         height: 100%;
-         background-color: rgba(0, 0, 0, 0.6);
-         display: none;
-         flex-direction: column;
-         justify-content: center;
-         align-items: center;
-         color: #fff;
-         font-weight: bold;
-      }
-
-      .main .main-box .box-dark .fa {
-         padding-right: 5px;
-      }
-
-      .main .main-box .box-dark .fa:nth-child(2) {
-         padding-left: 15px;
-      }
-
-      .main .main-box:nth-child(4n) {
-         margin-right: 32px;
-      }
-
-      .main .main-box:hover {
-         position: relative;
-         top: 5px;
-         box-shadow: 0 0 0 0;
-      }
-
-      .click-box {
-         background-color: rgba(0, 0, 0, 0.9);
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-         justify-content: center;
-         position: fixed;
-         top: 0;
-         left: 0;
-         z-index: 1;
-         width: 100%;
-         height: 100%;
-      }
-
-      .click-box .click-data {
-         width: 80%;
-         height: 80%;
-      }
-
-      .click-box .click-data .click-img {
-         width: 100%;
-         height: 90%;
-         text-align: center;
-      }
-
-      .click-box .click-data .click-img img {
-         opacity: 1;
-         width: auto;
-         height: auto;
-         max-width: 100%;
-         max-height: 100%;
-      }
-
-      .click-box .click-data .click-text {
-         margin-top: 10px;
-         color: #fff;
-         display: flex;
-      }
-
-      .click-box .click-data .click-text .caption {
-         text-align: left;
-         flex: 4
-      }
-
-      .click-box .click-data .click-text .date {
-         text-align: right;
-         flex: 1
-      }
-
-      .click-box .click-data .click-text .click-text-box {
-         ;
-      }
-
-      .click-box .click-data .click-text .click-text-box .fa {
-         padding-right: 5px;
-      }
-
-      .click-box .click-data .click-text .click-text-box .fa:nth-child(2) {
-         padding-left: 15px;
-      }
-
-      .click-box .click-data .click-text .click-text-box .subtitle {
-
-         font-size: 16px;
-         font-weight: 800;
-      }
-
-      .click-box .click-data .click-text .click-text-box .day {
-         font-size: 14px;
-      }
-
-      .hide {
-         display: none;
-      }
-
-      .navi .fa {
-         font-size: 80px;
-         color: {
-            color: main color
-         }
-         ;
-         opacity: 0.4;
-         position: fixed;
-         bottom: 5%;
-         cursor: pointer;
-         transition: 0.5s;
-      }
-
-      .navi .fa:hover {
-         opacity: 0.95;
-      }
-
-      .navi .fa-chevron-circle-left {
-         left: 10%;
-      }
-
-      .navi .fa-chevron-circle-right {
-         right: 10%;
-      }
-
-   </style>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   <script type="text/javascript">
-      $(function() {
-         $('.main-box').hover(function() {
-            $(this).find('.box-dark').stop().fadeIn(200);
-            $(this).find('.box-dark').css('display', 'flex');
-         }, function() {
-            $(this).find('.box-dark').stop().fadeOut(200);
+         .navi .fa-chevron-circle-right {
+            right: 10%; }
+      </style>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script type="text/javascript">
+         $(function () {
+            $('.main-box').hover(function () {
+               $(this).find('.box-dark').stop().fadeIn(200);
+               $(this).find('.box-dark').css('display', 'flex');
+            }, function () {
+               $(this).find('.box-dark').stop().fadeOut(200);
+            });
+            $('.main-box').click(function () {
+               var $imgUrl = $(this).find('.picture').text();
+               $('.click-img').find('img').attr('src', $imgUrl);
+               $htmlData = $(this).find('.box-dark').html();
+               $('.click-text-box').find('.day').html($htmlData);
+               $caption = $(this).find('.hide').html();
+               $('.subtitle').html($caption);
+               $('.hide-box').fadeIn();
+            });
+            $('.click-box').click(function () {
+               $('.hide-box').fadeOut();
+            });
          });
-         $('.main-box').click(function() {
-            var $imgUrl = $(this).find('.picture').text();
-            $('.click-img').find('img').attr('src', $imgUrl);
-            $htmlData = $(this).find('.box-dark').html();
-            $('.click-text-box').find('.day').html($htmlData);
-            $caption = $(this).find('.hide').html();
-            $('.subtitle').html($caption);
-            $('.hide-box').fadeIn();
-         });
-         $('.click-box').click(function() {
-            $('.hide-box').fadeOut();
-         });
-      });
 
-   </script>
-   <title>{Title}</title>
-</head>
+      </script>
+      <title>{Title}</title>
+   </head>
 
-<body>
-   <div class="header container">
-      <div class="title"><a href="{BlogURL}">{Title}</a></div>
-      <div class="menu"><i class="fa fa-bars" aria-hidden="true"></i></div>
-   </div>
-   <div class="main container">
-      {block:IndexPage} {block:Posts} {block:Photo}
-      <div class="main-box" style="background-image: url('{PhotoURL-500}')">
-         <div class="box-dark">
-            <p>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}</p>
-            <p>{24HourWithZero}:{Minutes}:{Seconds}</p>
-         </div>
-         <div class="hide">{block:Caption}{Caption}{/block:Caption}</div>
-         <div class="picture hide">{PhotoURL-HighRes}</div>
+   <body>
+      <div class="header container">
+         <div class="title"><a href="{BlogURL}">{Title}</a></div>
+         <div class="menu"><i class="fa fa-bars" aria-hidden="true"></i></div>
       </div>
-      {/block:Photo} {/block:Posts} {/block:IndexPage}
-   </div>
-   <div class="hide-box hide">
-      <div class="click-box">
-         <div class="click-data">
-            <div class="click-img">
-               <img src="">
+      <div class="main container">
+         {block:IndexPage}
+         {block:Posts}
+         {block:Photo}
+         <div class="main-box" style="background-image: url('{PhotoURL-500}')">
+            <div class="box-dark">
+               <p>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}</p>
+               <p>{24HourWithZero}:{Minutes}:{Seconds}</p>
             </div>
-            <div class="click-text">
-               <div class="click-text-box caption">
-                  <div class="subtitle"></div>
+            <div class="hide">{block:Caption}{Caption}{/block:Caption}</div>
+            <div class="picture hide">{PhotoURL-HighRes}</div>
+         </div>
+         {/block:Photo}
+         {/block:Posts}
+         {/block:IndexPage}
+      </div>
+      <div class="hide-box hide">
+         <div class="click-box">
+            <div class="click-data">
+               <div class="click-img">
+                  <img src="">
                </div>
-               <div class="click-text-box date">
-                  <div class="day"></div>
-               </div>
+               <div class="click-text">
+                  <div class="click-text-box caption">
+                     <div class="subtitle"></div>
+                  </div>
+                  <div class="click-text-box date">
+                     <div class="day"></div>
+                  </div>
 
+               </div>
             </div>
          </div>
       </div>
-   </div>
-   <div class="navi container">
-      {block:NextPage}
-      <a href="{NextPage}"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></a> {/block:NextPage} {block:PreviousPage}
-      <a href="{PreviousPage}"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a> {/block:PreviousPage}
+      <div class="navi container">
+         {block:NextPage}
+         <a href="{NextPage}"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></a>
+         {/block:NextPage}
+         {block:PreviousPage}
+         <a href="{PreviousPage}"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a>
+         {/block:PreviousPage}
 
-   </div>
+      </div>
 
-</body>
+   </body>
 
 </html>
